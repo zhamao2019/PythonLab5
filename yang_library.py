@@ -25,15 +25,28 @@ def showStaircase(x,y,w,h):
     while(x <= 127 and y <=63):
         x1 = x + w
         y1 = y + h
-        if x1 <= 127 and y1 <= 63:
+        if x1 <= 127:
             while (x < x1):
                 lcd.set_pixel(x,y,1)
                 lcd.show()
                 x += 1
+        else:
+            while(x <= 127):
+                lcd.set_pixel(x,y,1)
+                lcd.show()
+                x += 1
+            break
+        if y1 <= 63:
             while(y < y1):
                 lcd.set_pixel(x,y,1)
                 lcd.show()
                 y += 1
+        else:
+            while(y <= 63):
+                lcd.set_pixel(x,y,1)
+                lcd.show()
+                y += 1
+            break
 
 # 4.function that displays random pixel on the screen for a given period of time specifies in seconds.
 def showRandomPixel(t):
